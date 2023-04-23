@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform currentOrientation;      
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float customGravity;
-    private Rigidbody _rb;
+    [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
     public static PlayerMovement Instance => _instance;
     
