@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private Transform currentOrientation;      
     [SerializeField] private LayerMask groundLayer;
-    private Rigidbody _rb;
+    [SerializeField] private float customGravity;
+    [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
     public static PlayerMovement Instance => _instance;
     
@@ -13,14 +14,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
     [SerializeField] private float acceleration;
     [SerializeField] private float maxSpeed;
+    [SerializeField] private float walkingDrag;
     private Vector2 _playerInput;
     private Vector3 _direction;
     private Vector3 _groundedVelocity;
-    
+
+    [Header("Jumping")] 
+    [SerializeField] private float jumpStrength;
+    [SerializeField] private float fallSpeedClamp;
     [SerializeField] private float playerHeight;
-    [SerializeField] private float walkingDrag;
-    [SerializeField] private float aerialDrag;                  // I'm not sure if we want jumping to be an option for the player, let me know and i'll either expand upon what I have or get rid of this (same thing with sprinting)
+    [SerializeField] private float aerialDrag;
     [SerializeField] private float groundCheckRayCastLength;
+    private bool jumpInput;
+    private bool isJumping;
     private bool _isGrounded;
     
     private void Awake()
@@ -45,23 +51,31 @@ public class PlayerMovement : MonoBehaviour
         _rb.freezeRotation = true;
         _rb.interpolation = RigidbodyInterpolation.Interpolate;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        Physics.gravity = new Vector3(0f, -customGravity, 0f);
     }
 
     private void Update()
     {
-        GroundedVelocityClamp();
-        
-        GroundCheck();
-        
         // Gathering player input - I think it would be better idea to have a script in charge of gathering all the player inputs that we can just reference whenever we need, but I didn't want to start that without knowing how you plan on tackling picking up and moving items
         if (!canMove) return;
         _playerInput.x = Input.GetAxisRaw("Horizontal");
         _playerInput.y = Input.GetAxisRaw("Vertical");
+        jumpInput = Input.GetButtonDown("Jump");
+        
+        VelocityClamps();
+        GroundCheck();
+        Jump();
     }
 
     private void FixedUpdate()
     {
         Walk();
+        
+        // Handle player jumping
+        if (!isJumping) return;
+        _rb.AddForce(new Vector3(0f,jumpStrength, 0f), ForceMode.Impulse);
+        isJumping = !isJumping;
+
     }
 
     private void Walk()
@@ -72,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
         _rb.AddForce(_direction.normalized * (maxSpeed * acceleration), ForceMode.Force);
     }
 
-    private void GroundedVelocityClamp()
+    private void VelocityClamps()
     {
         // Storing grounded velocity
         var velocity = _rb.velocity;
@@ -84,6 +98,19 @@ public class PlayerMovement : MonoBehaviour
         
         // Setting a new velocity as maxSpeed in the proper direction
         _rb.velocity = new Vector3(clampedVelocity.x, _rb.velocity.y, clampedVelocity.z);
+
+        // Clamping fall speed
+        if (!(_rb.velocity.y < -fallSpeedClamp)) return;
+        velocity.y = -fallSpeedClamp;
+        _rb.velocity = new Vector3(velocity.x, velocity.y, velocity.z);
+    }
+
+    private void Jump()
+    {
+        if (_isGrounded && jumpInput)
+        {
+            isJumping = true;
+        }
     }
 
     private void GroundCheck()
