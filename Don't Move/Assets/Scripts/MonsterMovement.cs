@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,12 +7,21 @@ public class MonsterMovement : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform target;
-    [Range(1,3)][SerializeField] private float monsterMovementModifier;
-    [SerializeField] private float movementRelativeToPlayerCameraModifier = 100f;
+    [Range(1.1f,3f)][SerializeField] private float monsterMovementModifier = 2f;
+    [SerializeField] private float movementRelativeToPlayerCameraModifier = 300f;
     private float playerSpeed;
     private float playerCameraSpeed = 0;
     private float prevPlayerCameraSpeed = 0;
-    
+    private Rigidbody _rb;
+
+    private void Start()
+    {
+        _rb = gameObject.GetComponent<Rigidbody>();
+        _rb.interpolation = RigidbodyInterpolation.Interpolate;
+        _rb.isKinematic = true;
+        _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+    }
+
     private void Update()
     {
         playerSpeed = Mathf.Abs(PlayerMovement.Instance._rb.velocity.magnitude); 
