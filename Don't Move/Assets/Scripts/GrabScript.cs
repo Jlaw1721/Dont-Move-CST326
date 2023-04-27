@@ -61,7 +61,10 @@ public class GrabScript : MonoBehaviour
       if (Vector3.Distance(inGripObj.transform.position, grabPoint.position) > 0.1f)
       {
          Vector3 dir = grabPoint.position - inGripObj.transform.position;
-         inGripObj.GetComponent<Rigidbody>().AddForce(grabSpeed * dir);
+         while (inGripObj.transform.position != grabPoint.position)
+         {
+            inGripObj.transform.position = Vector3.MoveTowards(inGripObj.transform.position, grabPoint.position, grabSpeed * Time.deltaTime);
+         }
       }
    }
 
@@ -72,19 +75,19 @@ public class GrabScript : MonoBehaviour
       if (Input.GetKey(KeyCode.Q))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.left);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.up, Space.World);
       } else if (Input.GetKey(KeyCode.E))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.right);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.down, Space.World);
       } else if (Input.GetKey(KeyCode.Alpha1))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.up);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,-1), Space.World);
       } else if (Input.GetKey(KeyCode.Alpha3))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.down);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,1), Space.World);
       }
       rb.constraints = RigidbodyConstraints.FreezeRotation;
    }
