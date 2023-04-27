@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1216197405809451752}
   - {fileID: 1216197406338117598}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216197405619506701
 GameObject:
@@ -171,7 +171,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197405678691441
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197405780687897
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197405809451753
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197406063789168
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 110
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197406338117599
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1216197406382027608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,4 +1076,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
