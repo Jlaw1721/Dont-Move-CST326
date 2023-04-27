@@ -566,7 +566,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -981,7 +980,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1353,7 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42b82610ea2ca04ca8f65218543f407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: JoshTestScene
+  levelToLoad: Level1
   sceneFader: {fileID: 1361312607}
 --- !u!4 &1269663106
 Transform:
