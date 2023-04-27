@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
 {
     //public GameObject player;
-    public GameObject ui;
+    public GameObject pauseMenuUI;
     public SceneFader sceneFader;
     public string menuSceneName = "MainMenu";
     public void Update()
@@ -20,9 +21,9 @@ public class PauseMenu : MonoBehaviour
     public void TogglePaused()
     {
         
-        ui.SetActive(!ui.activeSelf);
+        pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
 
-        if (ui.activeSelf)
+        if (pauseMenuUI.activeSelf)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
