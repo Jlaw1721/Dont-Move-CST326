@@ -14,6 +14,8 @@ public class MonsterMovement : MonoBehaviour
     private float playerCameraSpeed = 0;
     private float prevPlayerCameraSpeed = 0;
     private Rigidbody _rb;
+    public GameObject monsterRig;
+    private Animator _monsterAnimator;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class MonsterMovement : MonoBehaviour
         _rb.interpolation = RigidbodyInterpolation.Interpolate;
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        _monsterAnimator = monsterRig.GetComponent<Animator>();
     }
 
     private void Update()
@@ -47,8 +50,7 @@ public class MonsterMovement : MonoBehaviour
         StartCoroutine(ComparePlayerCameraSpeed());
         
         agent.speed = (playerSpeed + playerCameraSpeed) * monsterMovementModifier;
-        
-        
+        _monsterAnimator.SetFloat("speed", agent.speed/2f);
     }
     
     private IEnumerator ComparePlayerCameraSpeed()
