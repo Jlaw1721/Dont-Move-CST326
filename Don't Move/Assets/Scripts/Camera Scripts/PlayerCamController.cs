@@ -1,15 +1,17 @@
+using System;
 using UnityEngine;
 
 public class PlayerCamController : MonoBehaviour
 {
     [SerializeField] private Transform currentOrientation;
-    [SerializeField] private Vector2 mouseSensitivity;
+    [HideInInspector] public Vector2 mouseSensitivity;
     private Vector2 _mouseInput;
     private Vector2 _currentRotation;
-    private float prevSpeed;
-
+    private float _prevSpeed;
+    private float _currentMouseSensitivity;
     private static PlayerCamController _instance;
     public static PlayerCamController Instance => _instance;
+    private const float Tolerance = 0.01f;  // Tolerance variable to avoid floating point comparisons between float values (unity gets upset if this isn't here)
 
     private void Awake()
     {
@@ -27,11 +29,29 @@ public class PlayerCamController : MonoBehaviour
         var transform1 = transform;
         var rotation = transform1.rotation;
         _currentRotation = new Vector2(rotation.x, rotation.y);
+
+        
+        //if (GameSettings.Instance.mouseSens == 0)
+        //{
+        //    GameSettings.Instance.mouseSensitivitySlider.value = 3;
+        //}
+
+        mouseSensitivity.x = GameSettings.Instance.mouseSens;
+        mouseSensitivity.y = GameSettings.Instance.mouseSens;
+        _currentMouseSensitivity = GameSettings.Instance.mouseSens;
     }
     
     private void Update()
     {
         MoveCamera();
+
+        // Checking to see if the player has updated the mouse sensitivity in the settings
+        if (Math.Abs(GameSettings.Instance.mouseSens - _currentMouseSensitivity) > Tolerance)
+        {
+            mouseSensitivity.x = GameSettings.Instance.mouseSens;
+            mouseSensitivity.y = GameSettings.Instance.mouseSens;
+            _currentMouseSensitivity = GameSettings.Instance.mouseSens;
+        }
     }
 
     private void MoveCamera()
