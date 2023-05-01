@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Wall
+  - Floor
   - Grab Object
+  - Roof
   layers:
   - Default
   - TransparentFX
