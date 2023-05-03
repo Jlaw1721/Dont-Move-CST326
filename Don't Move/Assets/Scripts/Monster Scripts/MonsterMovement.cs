@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,37 +21,26 @@ public class MonsterMovement : MonoBehaviour
     private void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
-        _rb.interpolation = RigidbodyInterpolation.Interpolate;
+        _rb.interpolation = RigidbodyInterpolation.None;
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _monsterAnimator = monsterRig.GetComponent<Animator>();
-
-        agent.updatePosition = false;
-        agent.updateRotation = false;
     }
 
     private void Update()
     {
         
         agent.SetDestination(target.position);
-        
-        //agent.SetDestination(target.position);
-        agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
-        
-        // Update the agent's position and rotation manually
-        //transform.position = agent.nextPosition;
-        
+        //agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
+
+        transform.position = agent.nextPosition; // update child object position
+
         TurnAgent();
         
         // Getting movement modifiers
         _playerSpeed = Mathf.Abs(PlayerMovement.Instance._rb.velocity.magnitude); 
         _playerCameraSpeed = Mathf.Abs(PlayerCamController.Instance.GetCameraMovement());
         movementRelativeToPlayerCameraModifier = ((PlayerCamController.Instance.mouseSensitivity.x + PlayerCamController.Instance.mouseSensitivity.y) / GameSettings.Instance.mouseSensitivitySlider.value) / 10f;
-
-        /*if (movementRelativeToPlayerCameraModifier > 2f)
-            movementRelativeToPlayerCameraModifier = 2f;
-        if (_playerSpeed > 2f)
-            _playerSpeed = 2f;*/
 
         // Use a coroutine to compare the current player camera speed to a value from a few frames ago
         StartCoroutine(ComparePlayerCameraSpeed());
@@ -62,7 +52,16 @@ public class MonsterMovement : MonoBehaviour
         }
 
         _monsterAnimator.SetFloat("speed", agent.speed / 2f);
-        
+
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f)
+        {
+            agent.isStopped = true;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
+
     }
 
     private void TurnAgent()
@@ -77,7 +76,8 @@ public class MonsterMovement : MonoBehaviour
         Debug.DrawRay(transformPosition, direction,Color.cyan);
         // Calculate the desired velocity based on the direction towards the target and the current speed
         var desiredVelocity = direction * agent.speed;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, agent.transform.rotation, agent.angularSpeed * Time.deltaTime);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, agent.transform.rotation, agent.angularSpeed * Time.deltaTime);
+        transform.rotation = agent.transform.rotation;
         transform.LookAt(target); // Instantaneous direction change, desired velocity path
         
         // If the raycast connects the monster is turned to face the player
