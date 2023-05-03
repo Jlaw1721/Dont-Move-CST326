@@ -51,7 +51,7 @@ public class MonsterMovement : MonoBehaviour
             agent.speed = maxMoveSpeed;
         }
 
-        _monsterAnimator.SetFloat("speed", agent.speed / 2f);
+        _monsterAnimator.SetFloat("speed", agent.speed);
 
         if (_playerSpeed == 0f && _playerCameraSpeed == 0f)
         {
