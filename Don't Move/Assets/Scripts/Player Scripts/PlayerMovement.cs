@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     
     [Header("Walking")] 
-    [SerializeField] private bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
+    public bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
     [SerializeField] private float acceleration;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float walkingDrag;
@@ -63,7 +63,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Gathering player input - I think it would be better idea to have a script in charge of gathering all the player inputs that we can just reference whenever we need, but I didn't want to start that without knowing how you plan on tackling picking up and moving items
-        if (!canMove) return;
+        if (!canMove)
+        {
+            _rb.isKinematic = true;
+            return;
+        }
+
+        _rb.isKinematic = false;
         _playerInput.x = Input.GetAxisRaw("Horizontal");
         _playerInput.y = Input.GetAxisRaw("Vertical");
         jumpInput = Input.GetButtonDown("Jump");
@@ -76,7 +82,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Walk();
+        if(canMove)
+            Walk();
         
         // Handle player jumping
         if (!isJumping) return;
@@ -117,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (_isGrounded && jumpInput)
+        if (_isGrounded && jumpInput && canMove)
         {
             isJumping = true;
         }
