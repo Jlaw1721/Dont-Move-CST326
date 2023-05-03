@@ -8,11 +8,10 @@ public class GrappleScript : MonoBehaviour
     public GameObject monsterRig;
     private FreezeMonsterAnimations freeze;
     [SerializeField] private int counterGoal = 5;
-    public Collider triggerCollider;
+    [HideInInspector]public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
     private static GrappleScript _instance;
     public static GrappleScript Instance => _instance;
-    private Coroutine StunnedEvent;
     private void Awake()
     {
         if (_instance == null)
@@ -23,6 +22,7 @@ public class GrappleScript : MonoBehaviour
     {
         _monsterMovement = monster.GetComponent<MonsterMovement>();
         freeze = monsterRig.GetComponent<FreezeMonsterAnimations>();
+        triggerCollider = gameObject.GetComponent<Collider>();
     }
 
     private void Update()
@@ -50,13 +50,13 @@ public class GrappleScript : MonoBehaviour
         PlayerCamController.Instance.canMoveCamera = false;
         _monsterMovement.agent.isStopped = true;
     }
-    
-    public void UnlockPositions()
+
+    private void UnlockPositions()
     {
         PlayerMovement.Instance.canMove = true;
         PlayerCamController.Instance.canMoveCamera = true;
         
-        StunnedEvent = StartCoroutine(DisableTrigger());
+        StartCoroutine(DisableTrigger());
     }
     
     private IEnumerator DisableTrigger()
@@ -92,7 +92,8 @@ public class GrappleScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Failed QTE");
+            GameOver.Instance.EndGame();
+            StopCoroutine(Grapple());
         }
     }
 }
