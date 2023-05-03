@@ -51,7 +51,7 @@ public class MonsterMovement : MonoBehaviour
             agent.speed = maxMoveSpeed;
         }
 
-        _monsterAnimator.SetFloat("speed", agent.speed);
+      
 
         if (_playerSpeed == 0f && _playerCameraSpeed == 0f || GrappleScript.Instance.triggerCollider.enabled == false)
         {
@@ -62,7 +62,7 @@ public class MonsterMovement : MonoBehaviour
         {
             agent.isStopped = false;
         }
-
+        _monsterAnimator.SetFloat("speed", agent.speed);
         
     }
 

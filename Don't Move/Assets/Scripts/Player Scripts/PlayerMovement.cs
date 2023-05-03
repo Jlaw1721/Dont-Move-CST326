@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
         // Gathering player input - I think it would be better idea to have a script in charge of gathering all the player inputs that we can just reference whenever we need, but I didn't want to start that without knowing how you plan on tackling picking up and moving items
         if (!canMove)
         {
-            _rb.velocity = new Vector3(0f, 0f, 0f);
             _rb.isKinematic = true;
             return;
         }
@@ -76,7 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Walk();
+        if(canMove)
+            Walk();
         
         // Handle player jumping
         if (!isJumping) return;

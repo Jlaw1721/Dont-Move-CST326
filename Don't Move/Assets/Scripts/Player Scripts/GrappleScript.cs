@@ -5,6 +5,8 @@ public class GrappleScript : MonoBehaviour
 {
     public Transform monster;
     public Transform player;
+    public GameObject monsterRig;
+    private FreezeMonsterAnimations freeze;
     [SerializeField] private int counterGoal = 5;
     public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
@@ -20,6 +22,7 @@ public class GrappleScript : MonoBehaviour
     private void Start()
     {
         _monsterMovement = monster.GetComponent<MonsterMovement>();
+        freeze = monsterRig.GetComponent<FreezeMonsterAnimations>();
     }
 
     private void Update()
@@ -58,12 +61,12 @@ public class GrappleScript : MonoBehaviour
     
     private IEnumerator DisableTrigger()
     {
+        freeze.ToggleFreeze();
         triggerCollider.enabled = false;
         
-
-
         yield return new WaitForSeconds(5f);
         
+        freeze.ToggleFreeze();
         triggerCollider.enabled = true;
     }
 
