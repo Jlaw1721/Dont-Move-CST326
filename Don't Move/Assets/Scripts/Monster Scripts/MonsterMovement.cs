@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class MonsterMovement : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField] private Transform target;
     [Range(1.1f,3f)][SerializeField] private float monsterMovementModifier = 2f;
     [SerializeField] private float movementRelativeToPlayerCameraModifier = 300f;
@@ -53,15 +53,17 @@ public class MonsterMovement : MonoBehaviour
 
         _monsterAnimator.SetFloat("speed", agent.speed);
 
-        if (_playerSpeed == 0f && _playerCameraSpeed == 0f)
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || GrappleScript.Instance.triggerCollider.enabled == false)
         {
             agent.isStopped = true;
+            agent.speed = 0;
         }
         else
         {
             agent.isStopped = false;
         }
 
+        
     }
 
     private void TurnAgent()
