@@ -17,15 +17,7 @@ public class MonsterMovement : MonoBehaviour
     private Rigidbody _rb;
     public GameObject monsterRig;
     private Animator _monsterAnimator;
-<<<<<<< Updated upstream
     public bool isStunned;
-    public static Transform instance = null;
-=======
-<<<<<<< Updated upstream
-    public bool isStunned;
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
     private void Start()
     {
@@ -34,17 +26,12 @@ public class MonsterMovement : MonoBehaviour
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _monsterAnimator = monsterRig.GetComponent<Animator>();
-        if (instance == null)
-        {
-            instance = transform;
-        }
     }
 
     private void Update()
     {
         
         agent.SetDestination(target.position);
-        //agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
 
         transform.position = agent.nextPosition; // update child object position
 
@@ -57,7 +44,6 @@ public class MonsterMovement : MonoBehaviour
 
         // Use a coroutine to compare the current player camera speed to a value from a few frames ago
         StartCoroutine(ComparePlayerCameraSpeed());
-<<<<<<< Updated upstream
         agent.speed = (_playerSpeed + _playerCameraSpeed) * monsterMovementModifier;
 
         if (agent.speed > maxMoveSpeed)
@@ -70,22 +56,19 @@ public class MonsterMovement : MonoBehaviour
             TriggerStun(10f);
         }
 
-        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true) //  || GrappleScript.Instance.triggerCollider.enabled == false )
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
         {
             agent.isStopped = true;
             agent.speed = 0;
+            agent.SetDestination(agent.transform.position);
         }
         else
         {
+            agent.SetDestination(target.position);
             agent.isStopped = false;
         }
         _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);
         
-=======
-        
-        agent.speed = (playerSpeed + playerCameraSpeed) * monsterMovementModifier;
-        _monsterAnimator.SetFloat("speed", agent.speed/2f);
->>>>>>> Stashed changes
     }
 
     private void TurnAgent()
@@ -144,7 +127,7 @@ public class MonsterMovement : MonoBehaviour
         isStunned = false;
         _monsterAnimator.SetBool("Stunned", false);
         _monsterAnimator.Play("Roar");
-        maxMoveSpeed *= 1.5f;
+        maxMoveSpeed *= 1.15f;
     }
 
     public void TriggerStun(float duration)
