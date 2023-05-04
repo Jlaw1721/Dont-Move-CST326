@@ -35,7 +35,7 @@ public class MonsterMovement : MonoBehaviour
 
         transform.position = agent.nextPosition; // update child object position
 
-        TurnAgent();
+        
         
         // Getting movement modifiers
         _playerSpeed = Mathf.Abs(PlayerMovement.Instance._rb.velocity.magnitude); 
@@ -51,8 +51,6 @@ public class MonsterMovement : MonoBehaviour
             agent.speed = maxMoveSpeed;
         }
 
-      
-
         if (_playerSpeed == 0f && _playerCameraSpeed == 0f || GrappleScript.Instance.triggerCollider.enabled == false)
         {
             agent.isStopped = true;
@@ -60,6 +58,7 @@ public class MonsterMovement : MonoBehaviour
         }
         else
         {
+            TurnAgent();
             agent.isStopped = false;
         }
         _monsterAnimator.SetFloat("speed", agent.speed);
