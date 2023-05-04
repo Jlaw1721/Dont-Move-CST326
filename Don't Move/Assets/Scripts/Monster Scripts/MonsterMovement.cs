@@ -60,9 +60,11 @@ public class MonsterMovement : MonoBehaviour
         {
             agent.isStopped = true;
             agent.speed = 0;
+            agent.SetDestination(agent.transform.position);
         }
         else
         {
+            agent.SetDestination(target.position);
             agent.isStopped = false;
         }
         _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);

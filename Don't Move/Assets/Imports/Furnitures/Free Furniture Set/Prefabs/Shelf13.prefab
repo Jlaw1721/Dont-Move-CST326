@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 1460832776932124062}
   - component: {fileID: 4996000811242901172}
   - component: {fileID: 7708455793535247105}
-  - component: {fileID: 7720870778122573483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Shelf13S_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1460832776932124062
 Transform:
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7720870778122573483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2620076855471909361}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1657403555157032230, guid: c175e625f2dce7b41b84d3fb4dcc05eb, type: 3}
 --- !u!1 &5343328974517925831
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,13 +94,12 @@ GameObject:
   - component: {fileID: 2417265953731677796}
   - component: {fileID: 7042120384620017363}
   - component: {fileID: 9172469963188089641}
-  - component: {fileID: 5662262556989889115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Shelf13S_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2417265953731677796
 Transform:
@@ -182,20 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5662262556989889115
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5343328974517925831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9109051673406732765, guid: c175e625f2dce7b41b84d3fb4dcc05eb, type: 3}
 --- !u!1 &6289516866450033213
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,13 +177,12 @@ GameObject:
   - component: {fileID: 2478692548839295044}
   - component: {fileID: 6750977479973772678}
   - component: {fileID: 2571170092814937951}
-  - component: {fileID: 19635526124395412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Shelf13S_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2478692548839295044
 Transform:
@@ -280,20 +249,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &19635526124395412
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289516866450033213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7251774887849054333, guid: c175e625f2dce7b41b84d3fb4dcc05eb, type: 3}
 --- !u!1 &6430291554787735348
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,12 +259,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5942267389505793422}
   - component: {fileID: 1453874451475061503}
-  m_Layer: 0
+  - component: {fileID: 4298643863431827683}
+  - component: {fileID: 8820404646997350596}
+  m_Layer: 7
   m_Name: Shelf13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5942267389505793422
 Transform:
@@ -361,6 +318,54 @@ LODGroup:
     renderers:
     - renderer: {fileID: 9172469963188089641}
   m_Enabled: 1
+--- !u!54 &4298643863431827683
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430291554787735348}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &8820404646997350596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430291554787735348}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.9139988, z: 1}
+  m_Center: {x: 0, y: 0.983014, z: 0}
 --- !u!1 &7227653971848007528
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,13 +377,12 @@ GameObject:
   - component: {fileID: 1083931607146781261}
   - component: {fileID: 4829478826701799422}
   - component: {fileID: 6626592977587250529}
-  - component: {fileID: 3447997561646314819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Shelf13S_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1083931607146781261
 Transform:
@@ -445,17 +449,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3447997561646314819
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7227653971848007528}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2630360053418903734, guid: c175e625f2dce7b41b84d3fb4dcc05eb, type: 3}
