@@ -3493,7 +3493,7 @@ Transform:
   - {fileID: 3129384727942908384}
   - {fileID: 3133966358078265754}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4382901191809022819
 GameObject:
