@@ -17,6 +17,7 @@ public class MonsterMovement : MonoBehaviour
     private Rigidbody _rb;
     public GameObject monsterRig;
     private Animator _monsterAnimator;
+    public bool isStunned;
 
     private void Start()
     {
@@ -31,7 +32,6 @@ public class MonsterMovement : MonoBehaviour
     {
         
         agent.SetDestination(target.position);
-        //agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
 
         transform.position = agent.nextPosition; // update child object position
 
@@ -50,8 +50,13 @@ public class MonsterMovement : MonoBehaviour
         {
             agent.speed = maxMoveSpeed;
         }
-        //|| GrappleScript.Instance.triggerCollider.enabled == false
-        if (_playerSpeed == 0f && _playerCameraSpeed == 0f)
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            TriggerStun(10f);
+        }
+
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
         {
             agent.isStopped = true;
             agent.speed = 0;
@@ -62,7 +67,7 @@ public class MonsterMovement : MonoBehaviour
             agent.SetDestination(target.position);
             agent.isStopped = false;
         }
-        _monsterAnimator.SetFloat("speed", agent.speed);
+        _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);
         
     }
 
@@ -112,5 +117,21 @@ public class MonsterMovement : MonoBehaviour
         {
             Physics.IgnoreCollision(collision.collider, agent.GetComponent<Collider>());
         }
+    }
+
+    IEnumerator CreateStun(float duration)
+    {
+        isStunned = true;
+        _monsterAnimator.SetBool("Stunned", true);
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
+        _monsterAnimator.SetBool("Stunned", false);
+        _monsterAnimator.Play("Roar");
+        maxMoveSpeed *= 1.15f;
+    }
+
+    public void TriggerStun(float duration)
+    {
+        StartCoroutine(CreateStun(duration));
     }
 }

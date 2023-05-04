@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public string menuSceneName = "MainMenu";
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !SceneManager.GetActiveScene().name.Equals(menuSceneName) && !GameOver.Instance.gameOverUI.activeSelf)
         {
             TogglePaused();
         }
