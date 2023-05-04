@@ -17,8 +17,15 @@ public class MonsterMovement : MonoBehaviour
     private Rigidbody _rb;
     public GameObject monsterRig;
     private Animator _monsterAnimator;
+<<<<<<< Updated upstream
     public bool isStunned;
     public static Transform instance = null;
+=======
+<<<<<<< Updated upstream
+    public bool isStunned;
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
     private void Start()
     {
@@ -50,6 +57,7 @@ public class MonsterMovement : MonoBehaviour
 
         // Use a coroutine to compare the current player camera speed to a value from a few frames ago
         StartCoroutine(ComparePlayerCameraSpeed());
+<<<<<<< Updated upstream
         agent.speed = (_playerSpeed + _playerCameraSpeed) * monsterMovementModifier;
 
         if (agent.speed > maxMoveSpeed)
@@ -73,6 +81,11 @@ public class MonsterMovement : MonoBehaviour
         }
         _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);
         
+=======
+        
+        agent.speed = (playerSpeed + playerCameraSpeed) * monsterMovementModifier;
+        _monsterAnimator.SetFloat("speed", agent.speed/2f);
+>>>>>>> Stashed changes
     }
 
     private void TurnAgent()
