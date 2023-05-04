@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Grab Object
   - Roof
+  - Monster
   layers:
   - Default
   - TransparentFX
