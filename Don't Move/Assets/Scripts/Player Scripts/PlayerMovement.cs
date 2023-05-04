@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,9 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
     public static PlayerMovement Instance => _instance;
+    public AudioSource soundSource;
+    public AudioClip footstepSound;
+
     
     [Header("Walking")] 
-    [SerializeField] private bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
+    public bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
     [SerializeField] private float acceleration;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float walkingDrag;
@@ -28,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpInput;
     private bool isJumping;
     private bool _isGrounded;
+    private bool _stepSoundCooldown = false;
     
     private void Awake()
     {
@@ -36,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
+            soundSource = GetComponent<AudioSource>();
             //DontDestroyOnLoad(gameObject);
         }
         else
@@ -57,7 +63,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Gathering player input - I think it would be better idea to have a script in charge of gathering all the player inputs that we can just reference whenever we need, but I didn't want to start that without knowing how you plan on tackling picking up and moving items
-        if (!canMove) return;
+        if (!canMove)
+        {
+            _rb.isKinematic = true;
+            return;
+        }
+
+        _rb.isKinematic = false;
         _playerInput.x = Input.GetAxisRaw("Horizontal");
         _playerInput.y = Input.GetAxisRaw("Vertical");
         jumpInput = Input.GetButtonDown("Jump");
@@ -65,11 +77,13 @@ public class PlayerMovement : MonoBehaviour
         VelocityClamps();
         GroundCheck();
         Jump();
+        
     }
 
     private void FixedUpdate()
     {
-        Walk();
+        if(canMove)
+            Walk();
         
         // Handle player jumping
         if (!isJumping) return;
@@ -80,9 +94,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
+        if (!_stepSoundCooldown && !(_playerInput.x==0 && _playerInput.y==0))
+        {
+            StartCoroutine(StepSound(1.1f*8f/acceleration));
+        }
         // Calculating new direction to move in
         _direction = currentOrientation.forward * _playerInput.y + currentOrientation.right * _playerInput.x;
-        
         _rb.AddForce(_direction.normalized * (maxSpeed * acceleration), ForceMode.Force);
     }
 
@@ -107,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (_isGrounded && jumpInput)
+        if (_isGrounded && jumpInput && canMove)
         {
             isJumping = true;
         }
@@ -120,5 +137,13 @@ public class PlayerMovement : MonoBehaviour
 
         // If the player is on the ground the drag is set to walkingDrag, otherwise its set to aerialDrag
         _rb.drag = !_isGrounded ? aerialDrag : walkingDrag;
+    }
+
+    private IEnumerator StepSound(float delay)
+    {
+        _stepSoundCooldown = true;
+        soundSource.PlayOneShot(footstepSound);
+        yield return new WaitForSeconds(delay);
+        _stepSoundCooldown = false;
     }
 }
