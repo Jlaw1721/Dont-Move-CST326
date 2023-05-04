@@ -32,7 +32,6 @@ public class MonsterMovement : MonoBehaviour
     {
         
         agent.SetDestination(target.position);
-        //agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
 
         transform.position = agent.nextPosition; // update child object position
 
@@ -57,7 +56,7 @@ public class MonsterMovement : MonoBehaviour
             TriggerStun(10f);
         }
 
-        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true) //  || GrappleScript.Instance.triggerCollider.enabled == false )
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
         {
             agent.isStopped = true;
             agent.speed = 0;
@@ -126,7 +125,7 @@ public class MonsterMovement : MonoBehaviour
         isStunned = false;
         _monsterAnimator.SetBool("Stunned", false);
         _monsterAnimator.Play("Roar");
-        maxMoveSpeed *= 1.5f;
+        maxMoveSpeed *= 1.15f;
     }
 
     public void TriggerStun(float duration)
