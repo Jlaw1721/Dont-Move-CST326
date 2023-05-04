@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class PlayerCamController : MonoBehaviour
 {
-    [SerializeField] private Transform currentOrientation;
+    public Transform currentOrientation;
     [HideInInspector] public Vector2 mouseSensitivity;
+    public bool canMoveCamera;
     private Vector2 _mouseInput;
     private Vector2 _currentRotation;
     private float _prevSpeed;
@@ -25,16 +26,12 @@ public class PlayerCamController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
+        canMoveCamera = true;
+        
         // Initialize previous rotation to current rotation at start
         var transform1 = transform;
         var rotation = transform1.rotation;
         _currentRotation = new Vector2(rotation.x, rotation.y);
-
-        
-        //if (GameSettings.Instance.mouseSens == 0)
-        //{
-        //    GameSettings.Instance.mouseSensitivitySlider.value = 3;
-        //}
 
         mouseSensitivity.x = GameSettings.Instance.mouseSens;
         mouseSensitivity.y = GameSettings.Instance.mouseSens;
@@ -43,6 +40,13 @@ public class PlayerCamController : MonoBehaviour
     
     private void Update()
     {
+        if (!canMoveCamera)
+        {
+            //transform.rotation = Quaternion.Lerp(transform.rotation, currentOrientation.rotation, Time.deltaTime * 20f);
+            transform.rotation = Quaternion.LookRotation(currentOrientation.forward);
+            return;
+        }
+            
         MoveCamera();
 
         // Checking to see if the player has updated the mouse sensitivity in the settings
