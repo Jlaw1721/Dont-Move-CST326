@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b94f7423-493c-44ad-a06c-49e9cf7ed1c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/FFK_DoorFrame_01_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/FFK_DoorFrame_01_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/FFK_DoorFrame_01_02.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/FFK_DoorFrame_01_02.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Ceiling_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Ceiling_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_02.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_02.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_03.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Filler_03.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Floor_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Floor_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_1x1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_1x1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_2x2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_2x2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_3x3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_3x3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_4x4.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Pillar_4x4.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_02.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_02.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_Double_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_01_Wall_Double_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_Frame_Double_01.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/Fast Food Restaurant Kit/_Prefabs/Fast Food Build Kit/Floors Walls Ceiling Doors/Int_FFK_Frame_Double_01.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/Footsteps.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/Footsteps.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/AudioManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/AudioManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/AudioManager.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/AudioManager.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundSettings.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundSettings.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundSettings.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sound/SoundSettings/SoundSettings.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/_BPS Basic Assets/Common/Materials/Basic Assets/BA_Glass_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/_BPS Basic Assets/Common/Materials/Basic Assets/BA_Glass_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/_BPS Basic Assets/Common/Materials/Basic Assets/BA_Glass_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Brick Project Studio/_BPS Basic Assets/Common/Materials/Basic Assets/BA_Glass_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Furnitures/Free Furniture Set/Source/Materials/AngledSofaLeatherBrown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Furnitures/Free Furniture Set/Source/Materials/AngledSofaLeatherBrown.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterAttack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterAttack.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterAttack.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterIdle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterIdle.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterIdle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterJump.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterJump.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterJump.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterJump.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterRoar.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterRoar.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterRoar.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterRoar.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterRun.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterRun.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterRun.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterRun.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterStun.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterStun.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterStun.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterStun.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterWalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Extracted/MonsterWalk.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Extracted/MonsterWalk.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/MonsterFSM.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/MonsterFSM.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/MonsterFSM.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/MonsterFSM.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Breathing Idle.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Breathing Idle.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Breathing Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Breathing Idle.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Jumping.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Jumping.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Jumping.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Jumping.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Roaring.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Roaring.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Roaring.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Roaring.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Run.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Run.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Run.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Run.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Swiping.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Swiping.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Swiping.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Swiping.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Walking.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Walking.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Mutant Walking.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Mutant Walking.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Zombie Agonizing.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Zombie Agonizing.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Animations/Zombie Agonizing.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MonsterAnimations/Zombie Agonizing.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterController.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterController.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterMats.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MonsterMats.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterMats/Eye.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MonsterMats/Eye.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterMats/Eye.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MonsterMats/Eye.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterMats/MonsterBase.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MonsterMats/MonsterBase.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/MonsterMats/MonsterBase.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MonsterMats/MonsterBase.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/236306__l4ff3n__growling-synth.aiff" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/236306__l4ff3n__growling-synth.aiff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/236306__l4ff3n__growling-synth.aiff.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/236306__l4ff3n__growling-synth.aiff.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/328538__quadraslayer__monster-roar-slow.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/328538__quadraslayer__monster-roar-slow.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/328538__quadraslayer__monster-roar-slow.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/328538__quadraslayer__monster-roar-slow.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/445353__matrixxx__vibrations_02_02_sec.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/445353__matrixxx__vibrations_02_02_sec.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/445353__matrixxx__vibrations_02_02_sec.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/445353__matrixxx__vibrations_02_02_sec.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/494391__drestortion__synth-monstar-02.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/494391__drestortion__synth-monstar-02.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/494391__drestortion__synth-monstar-02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/494391__drestortion__synth-monstar-02.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/501896__matrixxx__vibrations_01_04_sec.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/501896__matrixxx__vibrations_01_04_sec.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/501896__matrixxx__vibrations_01_04_sec.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/501896__matrixxx__vibrations_01_04_sec.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/531725__beefmaster69__giant-footsteps.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/531725__beefmaster69__giant-footsteps.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/531725__beefmaster69__giant-footsteps.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/531725__beefmaster69__giant-footsteps.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/546507__szegvari__ghost-creature-monster-scream-sfx-201129_0079.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/546507__szegvari__ghost-creature-monster-scream-sfx-201129_0079.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/546507__szegvari__ghost-creature-monster-scream-sfx-201129_0079.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/546507__szegvari__ghost-creature-monster-scream-sfx-201129_0079.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/580320__samsterbirdies__scary-horror-terror-shriek.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/580320__samsterbirdies__scary-horror-terror-shriek.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/580320__samsterbirdies__scary-horror-terror-shriek.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/580320__samsterbirdies__scary-horror-terror-shriek.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/77027__andysm__dinosteps1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/77027__andysm__dinosteps1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/77027__andysm__dinosteps1.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/77027__andysm__dinosteps1.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/85568__joelaudio__dragon_roar.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/85568__joelaudio__dragon_roar.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monster/Sounds/85568__joelaudio__dragon_roar.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/MonsterSounds/85568__joelaudio__dragon_roar.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerMovement.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2PIx7D5oLE1R7smfPbJezG3n7le" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b94f7423-493c-44ad-a06c-49e9cf7ed1c1" name="Changes" comment="" />
+      <created>1683158228263</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683158228263</updated>
+      <workItem from="1683158230206" duration="362000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
