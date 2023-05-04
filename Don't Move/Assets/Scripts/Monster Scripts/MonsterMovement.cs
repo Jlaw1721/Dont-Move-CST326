@@ -18,6 +18,7 @@ public class MonsterMovement : MonoBehaviour
     public GameObject monsterRig;
     private Animator _monsterAnimator;
     public bool isStunned;
+    public static Transform instance = null;
 
     private void Start()
     {
@@ -26,6 +27,10 @@ public class MonsterMovement : MonoBehaviour
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _monsterAnimator = monsterRig.GetComponent<Animator>();
+        if (instance == null)
+        {
+            instance = transform;
+        }
     }
 
     private void Update()
