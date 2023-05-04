@@ -6,6 +6,8 @@ public class GrappleScript : MonoBehaviour
    public Transform monster;
     public Transform player;
     public GameObject grappleUI;
+    [SerializeField] private float timeLimit = 4f;
+    [SerializeField] private float timeLostPerEncounter = 0.5f;
     [SerializeField] private int counterGoal = 5;
     [HideInInspector]public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
@@ -77,7 +79,7 @@ public class GrappleScript : MonoBehaviour
         int counter = 0;
         float timeElapsed = 0f;
 
-        while (timeElapsed < 4f && counter < counterGoal)
+        while (timeElapsed < timeLimit && counter < counterGoal)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -95,6 +97,8 @@ public class GrappleScript : MonoBehaviour
             {
                 grappleUI.SetActive(false);
                 UnlockPositions();
+                if (timeLimit > 2f)
+                    timeLimit -= timeLostPerEncounter;
             }
             else
             {
