@@ -6,13 +6,13 @@ public class GrappleScript : MonoBehaviour
     public Transform monster;
     public Transform player;
     public GameObject monsterRig;
-    public GameObject grappleUI;
     private FreezeMonsterAnimations freeze;
     [SerializeField] private int counterGoal = 5;
-    [HideInInspector]public Collider triggerCollider;
+    public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
     private static GrappleScript _instance;
     public static GrappleScript Instance => _instance;
+    private Coroutine StunnedEvent;
     private void Awake()
     {
         if (_instance == null)
@@ -23,7 +23,6 @@ public class GrappleScript : MonoBehaviour
     {
         _monsterMovement = monster.GetComponent<MonsterMovement>();
         freeze = monsterRig.GetComponent<FreezeMonsterAnimations>();
-        triggerCollider = gameObject.GetComponent<Collider>();
     }
 
     private void Update()
@@ -40,26 +39,24 @@ public class GrappleScript : MonoBehaviour
         {
             LockPositions();
             StartCoroutine(Grapple());
-            
         }
     }
 
     private void LockPositions()
     {
         player.LookAt(monster);
-        
         PlayerCamController.Instance.currentOrientation.LookAt(monster);
         PlayerMovement.Instance.canMove = false;
         PlayerCamController.Instance.canMoveCamera = false;
         _monsterMovement.agent.isStopped = true;
     }
-
-    private void UnlockPositions()
+    
+    public void UnlockPositions()
     {
         PlayerMovement.Instance.canMove = true;
         PlayerCamController.Instance.canMoveCamera = true;
         
-        StartCoroutine(DisableTrigger());
+        StunnedEvent = StartCoroutine(DisableTrigger());
     }
     
     private IEnumerator DisableTrigger()
@@ -75,7 +72,6 @@ public class GrappleScript : MonoBehaviour
 
     private IEnumerator Grapple()
     {
-        grappleUI.SetActive(true);
         int counter = 0;
         float timeElapsed = 0f;
 
@@ -92,15 +88,11 @@ public class GrappleScript : MonoBehaviour
 
         if (counter >= counterGoal)
         {
-            grappleUI.SetActive(false);
             UnlockPositions();
         }
         else
         {
-            grappleUI.SetActive(false);
-            GameOver.Instance.EndGame();
-            StopCoroutine(Grapple());
-            
+            Debug.Log("Failed QTE");
         }
     }
 }
