@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1858684342437035586}
   - component: {fileID: 1858684342437035598}
   - component: {fileID: 1858684342437035599}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarricadeMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5085743354765197807}
   - component: {fileID: 8185762576472672688}
   - component: {fileID: 2099019890012624650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BarricadeTable
   m_TagString: Grab Object
   m_Icon: {fileID: 0}
