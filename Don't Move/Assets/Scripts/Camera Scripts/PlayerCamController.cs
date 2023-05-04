@@ -48,9 +48,9 @@ public class PlayerCamController : MonoBehaviour
         // Checking to see if the player has updated the mouse sensitivity in the settings
         if (Math.Abs(GameSettings.Instance.mouseSens - _currentMouseSensitivity) > Tolerance)
         {
-            mouseSensitivity.x = GameSettings.Instance.mouseSens;
-            mouseSensitivity.y = GameSettings.Instance.mouseSens;
-            _currentMouseSensitivity = GameSettings.Instance.mouseSens;
+            mouseSensitivity.x = 500;
+            mouseSensitivity.y = 500; //don't merge this, I'm just using trackpad and didn't want to update settings each time I ran the game
+            _currentMouseSensitivity = 500;
         }
     }
 
