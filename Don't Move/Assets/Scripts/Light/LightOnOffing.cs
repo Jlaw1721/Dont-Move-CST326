@@ -3,9 +3,9 @@ using UnityEngine.Rendering;
 
 public class LightOnOffing : MonoBehaviour
 {
-    public float minOnTime = 0.2f;
-    public float maxOnTime = 0.5f;
-    public float minOffTime = 0.2f;
+    public float minOnTime = 0.5f;
+    public float maxOnTime = 2f;
+    public float minOffTime = 0.1f;
     public float maxOffTime = 0.5f;
 
     private Light newlight;

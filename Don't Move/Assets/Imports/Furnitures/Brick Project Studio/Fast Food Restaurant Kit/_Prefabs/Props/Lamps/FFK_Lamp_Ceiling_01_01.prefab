@@ -109,10 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ebfb6e82558024a84854ce34b26d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minIntensity: 2
-  maxIntensity: 3
+  minIntensity: 3
+  maxIntensity: 6
   flickerFrequency: 0.5
-  intsensity: 0
   turnsOff: 0
   distance: 0
 --- !u!114 &3023216813566249099
@@ -150,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOnTime: 0.5
+  minOnTime: 0.3
   maxOnTime: 1
   minOffTime: 0.1
   maxOffTime: 0.5
@@ -165,9 +164,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1326640411}
   - component: {fileID: 1326640413}
-  - component: {fileID: 1326640412}
   - component: {fileID: 2659606757678565538}
   - component: {fileID: 2333959272338182032}
+  - component: {fileID: 7274129321636977672}
   m_Layer: 0
   m_Name: Spot Light (2)
   m_TagString: Untagged
@@ -252,24 +251,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1326640412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326640410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ebfb6e82558024a84854ce34b26d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minIntensity: 2
-  maxIntensity: 3
-  flickerFrequency: 0.5
-  intsensity: 0
-  turnsOff: 0
-  distance: 0
 --- !u!114 &2659606757678565538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,11 +286,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOnTime: 0.5
+  minOnTime: 0.3
   maxOnTime: 1
   minOffTime: 0.1
   maxOffTime: 0.5
   distance: 12
+--- !u!114 &7274129321636977672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326640410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ebfb6e82558024a84854ce34b26d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 3
+  maxIntensity: 6
+  flickerFrequency: 1
+  turnsOff: 1
+  distance: 7
 --- !u!1 &1124843209013569571
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,10 +527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ebfb6e82558024a84854ce34b26d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minIntensity: 2
-  maxIntensity: 3
+  minIntensity: 3
+  maxIntensity: 6
   flickerFrequency: 0.5
-  intsensity: 0
   turnsOff: 0
   distance: 0
 --- !u!114 &7650117120704578517
@@ -570,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOnTime: 0.5
+  minOnTime: 0.3
   maxOnTime: 1
   minOffTime: 0.1
   maxOffTime: 0.5

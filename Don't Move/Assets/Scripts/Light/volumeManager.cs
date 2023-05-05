@@ -44,6 +44,6 @@ public class GlobalVolumeManager : MonoBehaviour
     {
         float distance = (monster.position - player.position).magnitude;
         v.intensity.value = Mathf.Clamp((20 - distance)/60, 0, 1/3f);
-        grain.intensity.value = Mathf.Clamp((20 - distance)/40, 0, 0.5f);
+        grain.intensity.value = Mathf.Clamp((20 - distance)/20, 0, 1f);
     }
 }

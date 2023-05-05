@@ -49,8 +49,8 @@ Light:
   m_Color: {r: 0.9339623, g: 0.8414604, b: 0.6123621, a: 1}
   m_Intensity: 10
   m_Range: 15
-  m_SpotAngle: 135.18161
-  m_InnerSpotAngle: 113.13541
+  m_SpotAngle: 167.59448
+  m_InnerSpotAngle: 19.678337
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -112,7 +112,6 @@ MonoBehaviour:
   minIntensity: 2
   maxIntensity: 4
   flickerFrequency: 1
-  intsensity: 0
   turnsOff: 0
   distance: 0
 --- !u!114 &1547591021832393578
