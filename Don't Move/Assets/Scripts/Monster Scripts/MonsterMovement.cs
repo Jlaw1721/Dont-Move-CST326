@@ -18,7 +18,8 @@ public class MonsterMovement : MonoBehaviour
     public GameObject monsterRig;
     private Animator _monsterAnimator;
     public bool isStunned;
-
+    public GameObject interactableObject;
+    [SerializeField] private bool isSlowed = false;
     private void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -113,6 +114,13 @@ public class MonsterMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.layer == interactableObject.layer)
+        {
+            if (isSlowed == false)
+            {
+                StartCoroutine(Slowed());
+            }
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
             Physics.IgnoreCollision(collision.collider, agent.GetComponent<Collider>());
@@ -128,6 +136,16 @@ public class MonsterMovement : MonoBehaviour
         _monsterAnimator.SetBool("Stunned", false);
         _monsterAnimator.Play("Roar");
         maxMoveSpeed *= 1.15f;
+    }
+    
+    IEnumerator Slowed()
+    {
+        isSlowed = true;
+        maxMoveSpeed = 2.25f;
+        agent.speed = maxMoveSpeed;
+        yield return new WaitForSeconds(5f);
+        isSlowed = false;
+        maxMoveSpeed = 5.5f;
     }
 
     public void TriggerStun(float duration)
