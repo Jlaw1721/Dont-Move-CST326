@@ -18,8 +18,13 @@ public class MonsterMovement : MonoBehaviour
     public GameObject monsterRig;
     private Animator _monsterAnimator;
     public bool isStunned;
+
+    public static Transform instance = null;
+
+
     public GameObject interactableObject;
     [SerializeField] private bool isSlowed = false;
+
     private void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -27,6 +32,10 @@ public class MonsterMovement : MonoBehaviour
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _monsterAnimator = monsterRig.GetComponent<Animator>();
+        if (instance == null)
+        {
+            instance = transform;
+        }
     }
 
     private void Update()
