@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class GrappleScript : MonoBehaviour
 {
-    public Transform monster;
+   public Transform monster;
     public Transform player;
-    public GameObject monsterRig;
-    private FreezeMonsterAnimations freeze;
+    public GameObject grappleUI;
+    [SerializeField] private float timeLimit = 4f;
+    [SerializeField] private float timeLostPerEncounter = 0.5f;
     [SerializeField] private int counterGoal = 5;
-    public Collider triggerCollider;
+    [HideInInspector]public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
+    private bool hasExecuted = false;
     private static GrappleScript _instance;
     public static GrappleScript Instance => _instance;
-    private Coroutine StunnedEvent;
     private void Awake()
     {
         if (_instance == null)
@@ -22,7 +23,7 @@ public class GrappleScript : MonoBehaviour
     private void Start()
     {
         _monsterMovement = monster.GetComponent<MonsterMovement>();
-        freeze = monsterRig.GetComponent<FreezeMonsterAnimations>();
+        triggerCollider = gameObject.GetComponent<Collider>();
     }
 
     private void Update()
@@ -39,43 +40,46 @@ public class GrappleScript : MonoBehaviour
         {
             LockPositions();
             StartCoroutine(Grapple());
+            
         }
     }
 
     private void LockPositions()
     {
         player.LookAt(monster);
+        
         PlayerCamController.Instance.currentOrientation.LookAt(monster);
         PlayerMovement.Instance.canMove = false;
         PlayerCamController.Instance.canMoveCamera = false;
         _monsterMovement.agent.isStopped = true;
     }
-    
-    public void UnlockPositions()
+
+    private void UnlockPositions()
     {
         PlayerMovement.Instance.canMove = true;
         PlayerCamController.Instance.canMoveCamera = true;
         
-        StunnedEvent = StartCoroutine(DisableTrigger());
+        StartCoroutine(DisableTrigger());
     }
     
     private IEnumerator DisableTrigger()
     {
-        freeze.ToggleFreeze();
         triggerCollider.enabled = false;
+        _monsterMovement.TriggerStun(5f);
         
         yield return new WaitForSeconds(5f);
         
-        freeze.ToggleFreeze();
         triggerCollider.enabled = true;
     }
 
     private IEnumerator Grapple()
     {
+        hasExecuted = false;
+        grappleUI.SetActive(true);
         int counter = 0;
         float timeElapsed = 0f;
 
-        while (timeElapsed < 4f && counter < counterGoal)
+        while (timeElapsed < timeLimit && counter < counterGoal)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -86,13 +90,24 @@ public class GrappleScript : MonoBehaviour
             yield return null;
         }
 
-        if (counter >= counterGoal)
+        if (!hasExecuted)
         {
-            UnlockPositions();
-        }
-        else
-        {
-            Debug.Log("Failed QTE");
+
+            if (counter >= counterGoal)
+            {
+                grappleUI.SetActive(false);
+                UnlockPositions();
+                if (timeLimit > 2f)
+                    timeLimit -= timeLostPerEncounter;
+            }
+            else
+            {
+                StopCoroutine(Grapple());
+                grappleUI.SetActive(false);
+                GameOver.Instance.EndGame();
+            }
+
+            hasExecuted = true;
         }
     }
 }

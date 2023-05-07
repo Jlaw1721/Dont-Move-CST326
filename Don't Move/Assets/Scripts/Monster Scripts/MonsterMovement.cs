@@ -19,6 +19,12 @@ public class MonsterMovement : MonoBehaviour
     private Animator _monsterAnimator;
     public bool isStunned;
 
+    public static Transform instance = null;
+
+
+    public GameObject interactableObject;
+    [SerializeField] private bool isSlowed = false;
+
     private void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody>();
@@ -26,13 +32,16 @@ public class MonsterMovement : MonoBehaviour
         _rb.isKinematic = true;
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _monsterAnimator = monsterRig.GetComponent<Animator>();
+        if (instance == null)
+        {
+            instance = transform;
+        }
     }
 
     private void Update()
     {
         
         agent.SetDestination(target.position);
-        //agent.Move((agent.desiredVelocity / 20f) * Time.deltaTime);
 
         transform.position = agent.nextPosition; // update child object position
 
@@ -57,13 +66,15 @@ public class MonsterMovement : MonoBehaviour
             TriggerStun(10f);
         }
 
-        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true) //  || GrappleScript.Instance.triggerCollider.enabled == false )
+        if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
         {
             agent.isStopped = true;
             agent.speed = 0;
+            agent.SetDestination(agent.transform.position);
         }
         else
         {
+            agent.SetDestination(target.position);
             agent.isStopped = false;
         }
         _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);
@@ -112,6 +123,13 @@ public class MonsterMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.layer == interactableObject.layer)
+        {
+            if (isSlowed == false)
+            {
+                StartCoroutine(Slowed());
+            }
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
             Physics.IgnoreCollision(collision.collider, agent.GetComponent<Collider>());
@@ -126,7 +144,17 @@ public class MonsterMovement : MonoBehaviour
         isStunned = false;
         _monsterAnimator.SetBool("Stunned", false);
         _monsterAnimator.Play("Roar");
-        maxMoveSpeed *= 1.5f;
+        maxMoveSpeed *= 1.15f;
+    }
+    
+    IEnumerator Slowed()
+    {
+        isSlowed = true;
+        maxMoveSpeed = 2.25f;
+        agent.speed = maxMoveSpeed;
+        yield return new WaitForSeconds(5f);
+        isSlowed = false;
+        maxMoveSpeed = 5.5f;
     }
 
     public void TriggerStun(float duration)
