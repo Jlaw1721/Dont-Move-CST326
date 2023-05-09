@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,10 @@ public class GrabScript : MonoBehaviour
    public float grabSpeed = 100f;
    public float throwPower = 50f;
 
+   [Header("UI")] 
+   public GameObject grabTutorial;
+   public Image centerDot;
+   public GameObject inGripTutorials;
    public void Start()
    {
       throwSettings = new Hashtable();
@@ -28,6 +33,21 @@ public class GrabScript : MonoBehaviour
    public void Update()
    {
       CheckObject();
+      
+      RaycastHit check;
+      if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out check, grabRange))
+      {
+         if (check.transform.gameObject.tag == "Grab Object" && inGripObj == null)
+         {
+            centerDot.color = Color.red;
+            grabTutorial.gameObject.SetActive(true);
+         }
+      }
+      else if (!Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out check, grabRange) || check.transform.gameObject.tag != "Grab Object")
+      {
+         centerDot.color = Color.white;
+         grabTutorial.gameObject.SetActive(false);
+      }
       
       if (Input.GetKeyDown(KeyCode.G))
       {
@@ -59,6 +79,7 @@ public class GrabScript : MonoBehaviour
          }
       }
    }
+   
    public void CheckObject()
    {
       if (inGripObj != null)
@@ -118,6 +139,8 @@ public class GrabScript : MonoBehaviour
    
    public void GrabObject(GameObject grabbed)
    {
+      inGripTutorials.gameObject.SetActive(true);
+      grabTutorial.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
       rb.constraints = RigidbodyConstraints.FreezeRotation;
       rb.useGravity = false;
@@ -128,6 +151,7 @@ public class GrabScript : MonoBehaviour
    
    public void Drop(GameObject grabbed)
    {
+      inGripTutorials.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
       inGripObj = null;
       rb.transform.parent = null;
