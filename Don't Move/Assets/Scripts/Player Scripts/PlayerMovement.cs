@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Setup")]
     [SerializeField] private Transform currentOrientation;      
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask interactLayer;
     [SerializeField] private float customGravity;
     [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpInput;
     private bool isJumping;
     private bool _isGrounded;
+    private bool _isOnInteractable;
     private bool _stepSoundCooldown = false;
     private bool _crossReady = true;
     
@@ -137,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (_isGrounded && jumpInput && canMove)
+        if ((_isGrounded || _isOnInteractable) && jumpInput && canMove)
         {
             isJumping = true;
         }
@@ -147,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Casting a ray from the player's feet to see if they are grounded or not
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, (playerHeight / 2) + groundCheckRayCastLength, groundLayer);
-
+        _isOnInteractable = Physics.Raycast(transform.position, Vector3.down, (playerHeight / 2) + groundCheckRayCastLength, interactLayer);
         // If the player is on the ground the drag is set to walkingDrag, otherwise its set to aerialDrag
         _rb.drag = !_isGrounded ? aerialDrag : walkingDrag;
     }
