@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GrappleScript : MonoBehaviour
 {
-   public Transform monster;
+    public Transform monster;
+    public Animator monsterAnimator;
     public Transform player;
     public GameObject grappleUI;
     [SerializeField] private float timeLimit = 4f;
@@ -47,6 +48,7 @@ public class GrappleScript : MonoBehaviour
     private void LockPositions()
     {
         player.LookAt(monster);
+        monsterAnimator.SetBool("Attack", true);
         
         PlayerCamController.Instance.currentOrientation.LookAt(monster);
         PlayerMovement.Instance.canMove = false;
@@ -56,6 +58,7 @@ public class GrappleScript : MonoBehaviour
 
     private void UnlockPositions()
     {
+        monsterAnimator.SetBool("Attack", false);
         PlayerMovement.Instance.canMove = true;
         PlayerCamController.Instance.canMoveCamera = true;
         

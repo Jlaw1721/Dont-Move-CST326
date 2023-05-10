@@ -16,6 +16,7 @@ public class MonsterMovement : MonoBehaviour
     private float _prevPlayerCameraSpeed = 0;
     private Rigidbody _rb;
     public GameObject monsterRig;
+    public AudioSource radarSource;
     private Animator _monsterAnimator;
     public bool isStunned;
 
@@ -40,7 +41,7 @@ public class MonsterMovement : MonoBehaviour
 
     private void Update()
     {
-        
+        radarSource.pitch = maxMoveSpeed/5.5f;
         agent.SetDestination(target.position);
 
         transform.position = agent.nextPosition; // update child object position
@@ -59,11 +60,6 @@ public class MonsterMovement : MonoBehaviour
         if (agent.speed > maxMoveSpeed)
         {
             agent.speed = maxMoveSpeed;
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            TriggerStun(10f);
         }
 
         if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
