@@ -62,11 +62,6 @@ public class MonsterMovement : MonoBehaviour
             agent.speed = maxMoveSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            TriggerStun(10f);
-        }
-
         if (_playerSpeed == 0f && _playerCameraSpeed == 0f || isStunned == true)
         {
             agent.isStopped = true;

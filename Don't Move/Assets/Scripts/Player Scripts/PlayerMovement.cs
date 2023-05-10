@@ -10,8 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
     public static PlayerMovement Instance => _instance;
+    
     public AudioSource soundSource;
     public AudioClip footstepSound;
+    public GameObject cross;
+    private Animator crossAnimator;
+    public MonsterMovement monsterMovement;
 
     
     [Header("Walking")] 
@@ -33,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private bool _isGrounded;
     private bool _stepSoundCooldown = false;
+    private bool _crossReady = true;
     
     private void Awake()
     {
@@ -53,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         // I decided to hardcode the player's rigidbody options so they don't get messed on other people's machines somehow
+        crossAnimator = cross.GetComponent<Animator>();
         _rb = GetComponent<Rigidbody>();
         _rb.freezeRotation = true;
         _rb.interpolation = RigidbodyInterpolation.Interpolate;
@@ -69,6 +75,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.X) && _crossReady)
+        {
+            _crossReady = false;
+            monsterMovement.TriggerStun(5f);
+            crossAnimator.Play("Cross");
+        }
+        
         _rb.isKinematic = false;
         _playerInput.x = Input.GetAxisRaw("Horizontal");
         _playerInput.y = Input.GetAxisRaw("Vertical");
