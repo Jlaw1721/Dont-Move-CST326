@@ -121,19 +121,22 @@ public class GrabScript : MonoBehaviour
       {
          rb.constraints = RigidbodyConstraints.None;
          inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.up, Space.World);
-      } else if (Input.GetKey(KeyCode.E))
-      {
-         rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.down, Space.World);
-      } else if (Input.GetKey(KeyCode.Alpha1))
-      {
-         rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,-1), Space.World);
-      } else if (Input.GetKey(KeyCode.Alpha3))
+      } 
+      else if (Input.GetKey(KeyCode.E))
       {
          rb.constraints = RigidbodyConstraints.None;
          inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,1), Space.World);
-      }
+      } 
+      // else if (Input.GetKey(KeyCode.Alpha1))
+      // {
+      //    rb.constraints = RigidbodyConstraints.None;
+      //    inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,-1), Space.World);
+      // } 
+      // else if (Input.GetKey(KeyCode.Alpha3))
+      // {
+      //    rb.constraints = RigidbodyConstraints.None;
+      //    inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,1), Space.World);
+      // }
       rb.constraints = RigidbodyConstraints.FreezeRotation;
    }
    
