@@ -16,6 +16,7 @@ public class MonsterMovement : MonoBehaviour
     private float _prevPlayerCameraSpeed = 0;
     private Rigidbody _rb;
     public GameObject monsterRig;
+    public AudioSource radarSource;
     private Animator _monsterAnimator;
     public bool isStunned;
 
@@ -40,7 +41,7 @@ public class MonsterMovement : MonoBehaviour
 
     private void Update()
     {
-        
+        radarSource.pitch = maxMoveSpeed/5.5f;
         agent.SetDestination(target.position);
 
         transform.position = agent.nextPosition; // update child object position
