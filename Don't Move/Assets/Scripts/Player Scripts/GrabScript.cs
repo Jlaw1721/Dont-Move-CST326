@@ -9,11 +9,22 @@ public class GrabScript : MonoBehaviour
    [Header("Grab Setup Variables")]
    public Transform grabPoint;
    private GameObject inGripObj;
+   private Hashtable throwSettings;
 
    [Header("Parameters")] 
    public float grabRange = 5.0f;
    public float grabSpeed = 100f;
    public float throwPower = 50f;
+
+   public void Start()
+   {
+      throwSettings = new Hashtable();
+      throwSettings.Add(1f, 15f);
+      throwSettings.Add(1.5f, 30f);
+      throwSettings.Add(0.05f, 1f);
+      throwSettings.Add(0.15f, 2f);
+   }
+
    public void Update()
    {
       CheckObject();
@@ -38,6 +49,16 @@ public class GrabScript : MonoBehaviour
       }
    }
 
+   private void OnCollisionEnter(Collision collision)
+   {
+      if (collision.gameObject.CompareTag("Grab Object"))
+      {
+         if (inGripObj != null)
+         {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+         }
+      }
+   }
    public void CheckObject()
    {
       if (inGripObj != null)
@@ -45,8 +66,11 @@ public class GrabScript : MonoBehaviour
          if (Input.GetKeyDown(KeyCode.R))
          {
             GameObject thrownObject = inGripObj;
+            string key = thrownObject.gameObject.tag;
             Drop(inGripObj);
+            throwPower = (float)Convert.ToDouble(throwSettings[thrownObject.GetComponent<Rigidbody>().mass]);
             thrownObject.GetComponent<Rigidbody>().AddForce(transform.forward * throwPower, ForceMode.Impulse);
+            thrownObject = null;
          }
          else
          {
