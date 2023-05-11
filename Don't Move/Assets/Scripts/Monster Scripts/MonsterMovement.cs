@@ -41,7 +41,7 @@ public class MonsterMovement : MonoBehaviour
 
     private void Update()
     {
-        radarSource.pitch = maxMoveSpeed/5.5f;
+        
         agent.SetDestination(target.position);
 
         transform.position = agent.nextPosition; // update child object position
@@ -74,6 +74,8 @@ public class MonsterMovement : MonoBehaviour
             agent.isStopped = false;
         }
         _monsterAnimator.SetFloat("speed", agent.velocity.magnitude);
+        
+        radarSource.pitch = maxMoveSpeed/5.5f; // idk why but when this was at the top of update it broke the movement on my end altogether but it works fine down here
         
     }
 
