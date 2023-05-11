@@ -96,9 +96,9 @@ public class GrabScript : MonoBehaviour
       if (Vector3.Distance(inGripObj.transform.position, grabPoint.position) > 0.1f)
       {
          Vector3 dir = grabPoint.position - inGripObj.transform.position;
-         while (inGripObj.transform.position != grabPoint.position)
+         if (inGripObj.transform.position != grabPoint.position)
          {
-            inGripObj.transform.position = Vector3.MoveTowards(inGripObj.transform.position, grabPoint.position, grabSpeed * Time.deltaTime);
+            inGripObj.GetComponent<Rigidbody>().AddForce(dir * 1000 * Time.deltaTime, ForceMode.Force);
          }
       }
    }
@@ -110,12 +110,12 @@ public class GrabScript : MonoBehaviour
       if (Input.GetKey(KeyCode.Q))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.up, Space.World);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * this.transform.up, Space.World);
       } 
       else if (Input.GetKey(KeyCode.E))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,1), Space.World);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * this.transform.right, Space.World);
       } 
       // else if (Input.GetKey(KeyCode.Alpha1))
       // {
@@ -135,11 +135,12 @@ public class GrabScript : MonoBehaviour
       inGripTutorials.gameObject.SetActive(true);
       grabTutorial.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
-      //rb.constraints = RigidbodyConstraints.FreezeRotation;
+      rb.constraints = RigidbodyConstraints.FreezeRotation;
       rb.useGravity = false;
       rb.drag = 10;
       rb.transform.parent = grabPoint;
       inGripObj = grabbed;
+      inGripObj.transform.position = Vector3.MoveTowards(inGripObj.transform.position, grabPoint.position, grabSpeed * Time.deltaTime);
    }
    
    public void Drop(GameObject grabbed)
@@ -150,7 +151,7 @@ public class GrabScript : MonoBehaviour
       Physics.IgnoreCollision(inGripObj.GetComponent<Collider>(), playerPhysicsObject.GetComponent<Collider>(), false);
       inGripObj = null;
       rb.useGravity = true;
-      //rb.constraints = RigidbodyConstraints.None;
+      rb.constraints = RigidbodyConstraints.None;
       rb.drag = 1;
    }
       
