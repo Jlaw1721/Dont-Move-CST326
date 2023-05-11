@@ -3,17 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterSoundControl : MonoBehaviour
+public class MonsterActiveSoundControl : MonoBehaviour
 {
-    public AudioSource monster;
-
-    private void Start()
-    {
-        monster = GetComponent<AudioSource>();
-    }
-
+    public AudioSource monsterActive;
+    public AudioSource monsterContinuous;
+    
     public void PlaySound(AudioClip sound)
     {
-        monster.PlayOneShot(sound);
+        monsterActive.PlayOneShot(sound);
     }
 }

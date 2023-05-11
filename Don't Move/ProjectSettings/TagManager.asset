@@ -9,6 +9,7 @@ TagManager:
   - Grab Object
   - Roof
   - Monster
+  - static_door
   layers:
   - Default
   - TransparentFX
