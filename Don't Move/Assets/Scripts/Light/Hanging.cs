@@ -5,7 +5,7 @@ public class Hanging : MonoBehaviour
     public float speed = 1f;
     public float angle = 30f;
 
-    private float timer = 0.0f;
+    //private float timer = 0.0f;
 
 
 
