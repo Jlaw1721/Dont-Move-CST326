@@ -36,7 +36,7 @@ Transform:
   - {fileID: 1031140931}
   - {fileID: 9014982073156084172}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &1031140916
 LODGroup:
@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 9014982073156084172}
   - component: {fileID: 8274710888178880065}
   - component: {fileID: 1874827913044464690}
+  - component: {fileID: 6019763049918444123}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -534,6 +535,28 @@ MonoBehaviour:
   minIntensity: 2
   maxIntensity: 3
   flickerFrequency: 1
-  intsensity: 0
   turnsOff: 1
   distance: 5
+--- !u!114 &6019763049918444123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605646261066001398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
