@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
     public string menuSceneName = "MainMenu";
     private static GameOver _instance;
     public static GameOver Instance => _instance;
+    public AudioSource gameOverSound;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class GameOver : MonoBehaviour
         Cursor.visible = true;
         
         Time.timeScale = 0f;
+        gameOverSound.Play();
     }
 
     public void RetryLevel()
