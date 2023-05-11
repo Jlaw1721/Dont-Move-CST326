@@ -44,6 +44,7 @@ public class GrappleScript : MonoBehaviour
         {
             LockPositions();
             StartCoroutine(Grapple());
+            
         }
     }
 
