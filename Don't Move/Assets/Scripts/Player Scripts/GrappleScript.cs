@@ -14,7 +14,7 @@ public class GrappleScript : MonoBehaviour
     private MonsterMovement _monsterMovement;
     private bool hasExecuted = false;
     public GameObject camera;
-    public GrabScript grab;
+    private GrabScript grab;
     private static GrappleScript _instance;
     public static GrappleScript Instance => _instance;
     private void Awake()
