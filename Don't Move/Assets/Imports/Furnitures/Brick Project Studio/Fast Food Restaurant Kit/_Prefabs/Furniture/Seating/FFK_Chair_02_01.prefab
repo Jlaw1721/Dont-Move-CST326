@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5030419132331333837}
   m_Layer: 7
   m_Name: FFK_Chair_02_01
-  m_TagString: Grab Object
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5286386914663915974}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5449155763570444924
 MeshFilter:
