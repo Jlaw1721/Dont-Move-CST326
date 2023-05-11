@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2775799726096368682}
   - component: {fileID: 3844846245257726486}
   - component: {fileID: 940334857779006906}
-  m_Layer: 0
+  - component: {fileID: 2288272305124848815}
+  m_Layer: 7
   m_Name: SM_AngledSofaLeatherBlackSmall_2_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2288272305124848815
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2483376435551794355}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3872624371222387053, guid: bbb1b4044de0aa94b8d85dd16db1af80, type: 3}
 --- !u!1 &5477812914356900978
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +117,8 @@ GameObject:
   - component: {fileID: 1212839849235802655}
   - component: {fileID: 2687244687934640308}
   - component: {fileID: 7313254775367936708}
-  m_Layer: 0
+  - component: {fileID: 5656666428623903101}
+  m_Layer: 7
   m_Name: SM_AngledSofaLeatherBlackSmall_2_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +190,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5656666428623903101
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477812914356900978}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9025681210753279101, guid: bbb1b4044de0aa94b8d85dd16db1af80, type: 3}
 --- !u!1 &5898078444966987255
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +223,8 @@ GameObject:
   - component: {fileID: 633328884671616804}
   - component: {fileID: 4759300266322199561}
   - component: {fileID: 781785464570667158}
-  m_Layer: 0
+  - component: {fileID: 4020077393439361152}
+  m_Layer: 7
   m_Name: SM_AngledSofaLeatherBlackSmall_2_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,6 +296,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4020077393439361152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898078444966987255}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4996972316392914389, guid: bbb1b4044de0aa94b8d85dd16db1af80, type: 3}
 --- !u!1 &6974013784188787537
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +329,8 @@ GameObject:
   - component: {fileID: 4226864669618236652}
   - component: {fileID: 8031129627842921336}
   - component: {fileID: 8470911792178509613}
-  m_Layer: 0
+  - component: {fileID: 1301550707892340440}
+  m_Layer: 7
   m_Name: SM_AngledSofaLeatherBlackSmall_2_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,6 +402,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1301550707892340440
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974013784188787537}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6160632580383328864, guid: bbb1b4044de0aa94b8d85dd16db1af80, type: 3}
 --- !u!1 &8710159877783034348
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +436,7 @@ GameObject:
   - component: {fileID: 3887023500105413671}
   - component: {fileID: -768418682947741006}
   - component: {fileID: 6048598658849168672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AngledSofaLeatherBlackSmall_2S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +460,7 @@ Transform:
   - {fileID: 2775799726096368682}
   - {fileID: 1212839849235802655}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &3887023500105413671
 LODGroup:
