@@ -454,7 +454,7 @@ AudioSource:
   m_GameObject: {fileID: 6190975342935891606}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9015048463780958200, guid: 341225cb1f2f3f84eafcb6209d2b930d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4f26570d676dd0541bb087b0fa13ff21, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -673,6 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 5754892776634243735}
   inGripObj: {fileID: 0}
+  playerPhysicsObject: {fileID: 0}
   grabRange: 5
   grabSpeed: 100
   throwPower: 10
