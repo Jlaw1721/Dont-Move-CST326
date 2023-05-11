@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2661987463298162537}
   - component: {fileID: 7443559146363489255}
+  - component: {fileID: 1353441609979026959}
   m_Layer: 7
   m_Name: Kitchen_Table
   m_TagString: Grab Object
@@ -254,7 +255,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6280642165052026232}
   serializedVersion: 4
-  m_Mass: 1.5
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -273,3 +274,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &1353441609979026959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280642165052026232}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8849449, y: 1, z: 0.7771431}
+  m_Center: {x: 0.00066947937, y: -1.1394546e-15, z: -0.33018193}
