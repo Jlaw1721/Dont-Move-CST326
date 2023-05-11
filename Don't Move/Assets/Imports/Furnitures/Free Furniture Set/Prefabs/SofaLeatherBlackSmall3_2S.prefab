@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4515295415399055725}
   - component: {fileID: 7162262119717427636}
   - component: {fileID: 1656774524170527888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_SofaLeatherBlackSmall3_2_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5814147430631526464
 Transform:
@@ -91,7 +91,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865933690835539263}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -103,7 +103,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5024265539744230454, guid: e74ee2056a294ce40a38683af469f99a, type: 3}
 --- !u!1 &4169547908892250030
@@ -118,12 +118,12 @@ GameObject:
   - component: {fileID: 8273579208187683594}
   - component: {fileID: 7675638474821481849}
   - component: {fileID: 7255861893899555950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_SofaLeatherBlackSmall3_2_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6767171485951015697
 Transform:
@@ -197,7 +197,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169547908892250030}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -209,7 +209,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2955327333507897044, guid: e74ee2056a294ce40a38683af469f99a, type: 3}
 --- !u!1 &4783548200491068552
@@ -224,12 +224,12 @@ GameObject:
   - component: {fileID: 1046248886044747236}
   - component: {fileID: 8727121690490334358}
   - component: {fileID: 7073972299741367085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_SofaLeatherBlackSmall3_2_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8751905550525712229
 Transform:
@@ -303,7 +303,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783548200491068552}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -315,7 +315,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3545157903970336581, guid: e74ee2056a294ce40a38683af469f99a, type: 3}
 --- !u!1 &5188719395589297662
@@ -328,12 +328,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4848644380803190596}
   - component: {fileID: 365855662396766261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SofaLeatherBlackSmall3_2S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4848644380803190596
 Transform:
@@ -352,7 +352,7 @@ Transform:
   - {fileID: 6767171485951015697}
   - {fileID: 7579068538917304706}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &365855662396766261
 LODGroup:
@@ -397,12 +397,12 @@ GameObject:
   - component: {fileID: 8078035192876840407}
   - component: {fileID: 8348897321662028971}
   - component: {fileID: 560045153627001968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_SofaLeatherBlackSmall3_2_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7579068538917304706
 Transform:
@@ -476,7 +476,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7676261460997369691}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6a6ec1f1dc99c4dc59cdf63427f7b0d7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -488,6 +488,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6028487897344878373, guid: e74ee2056a294ce40a38683af469f99a, type: 3}

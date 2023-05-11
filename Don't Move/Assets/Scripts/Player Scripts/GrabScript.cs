@@ -9,8 +9,9 @@ public class GrabScript : MonoBehaviour
 {
    [Header("Grab Setup Variables")]
    public Transform grabPoint;
-   private GameObject inGripObj;
+   [HideInInspector] public GameObject inGripObj;
    private Hashtable throwSettings;
+   public GameObject playerPhysicsObject;
 
    [Header("Parameters")] 
    public float grabRange = 5.0f;
@@ -69,17 +70,6 @@ public class GrabScript : MonoBehaviour
       }
    }
 
-   private void OnCollisionEnter(Collision collision)
-   {
-      if (collision.gameObject.CompareTag("Grab Object"))
-      {
-         if (inGripObj != null)
-         {
-            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-         }
-      }
-   }
-   
    public void CheckObject()
    {
       if (inGripObj != null)
@@ -106,9 +96,9 @@ public class GrabScript : MonoBehaviour
       if (Vector3.Distance(inGripObj.transform.position, grabPoint.position) > 0.1f)
       {
          Vector3 dir = grabPoint.position - inGripObj.transform.position;
-         while (inGripObj.transform.position != grabPoint.position)
+         if (inGripObj.transform.position != grabPoint.position)
          {
-            inGripObj.transform.position = Vector3.MoveTowards(inGripObj.transform.position, grabPoint.position, grabSpeed * Time.deltaTime);
+            inGripObj.GetComponent<Rigidbody>().AddForce(dir * 1000 * Time.deltaTime, ForceMode.Force);
          }
       }
    }
@@ -120,12 +110,12 @@ public class GrabScript : MonoBehaviour
       if (Input.GetKey(KeyCode.Q))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * Vector3.up, Space.World);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * this.transform.up, Space.World);
       } 
       else if (Input.GetKey(KeyCode.E))
       {
          rb.constraints = RigidbodyConstraints.None;
-         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * new Vector3(0,0,1), Space.World);
+         inGripObj.transform.Rotate(grabSpeed * Time.deltaTime * this.transform.right, Space.World);
       } 
       // else if (Input.GetKey(KeyCode.Alpha1))
       // {
@@ -150,14 +140,16 @@ public class GrabScript : MonoBehaviour
       rb.drag = 10;
       rb.transform.parent = grabPoint;
       inGripObj = grabbed;
+      inGripObj.transform.position = Vector3.MoveTowards(inGripObj.transform.position, grabPoint.position, grabSpeed * Time.deltaTime);
    }
    
    public void Drop(GameObject grabbed)
    {
       inGripTutorials.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
-      inGripObj = null;
       rb.transform.parent = null;
+      Physics.IgnoreCollision(inGripObj.GetComponent<Collider>(), playerPhysicsObject.GetComponent<Collider>(), false);
+      inGripObj = null;
       rb.useGravity = true;
       rb.constraints = RigidbodyConstraints.None;
       rb.drag = 1;

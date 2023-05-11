@@ -11,13 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public Rigidbody _rb;
     private static PlayerMovement _instance;
     public static PlayerMovement Instance => _instance;
-    
+
     public AudioSource soundSource;
     public AudioClip footstepSound;
     public GameObject cross;
     private Animator crossAnimator;
     public MonsterMovement monsterMovement;
-
+    
     
     [Header("Walking")] 
     public bool canMove;                      // This is only here if we want to disable player movement during any interactions, maybe when the monster attacks and there's a grapple or something
@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if ((_isGrounded || _isOnInteractable) && jumpInput && canMove)
+        if ((_isOnInteractable && jumpInput && canMove) || (_isGrounded && jumpInput && canMove))
         {
             isJumping = true;
         }
@@ -161,4 +161,5 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(delay);
         _stepSoundCooldown = false;
     }
+    
 }
