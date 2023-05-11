@@ -13,6 +13,8 @@ public class GrappleScript : MonoBehaviour
     [HideInInspector]public Collider triggerCollider;
     private MonsterMovement _monsterMovement;
     private bool hasExecuted = false;
+    public GameObject camera;
+    public GrabScript grab;
     private static GrappleScript _instance;
     public static GrappleScript Instance => _instance;
     private void Awake()
@@ -25,6 +27,7 @@ public class GrappleScript : MonoBehaviour
     {
         _monsterMovement = monster.GetComponent<MonsterMovement>();
         triggerCollider = gameObject.GetComponent<Collider>();
+        grab = camera.GetComponent<GrabScript>();
     }
 
     private void Update()
@@ -37,7 +40,7 @@ public class GrappleScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Monster"))
+        if (other.gameObject.CompareTag("Monster") && !_monsterMovement.isStunned)
         {
             LockPositions();
             StartCoroutine(Grapple());
@@ -76,6 +79,10 @@ public class GrappleScript : MonoBehaviour
 
     private IEnumerator Grapple()
     {
+        if (grab.inGripObj != null)
+        {
+            grab.Drop(grab.inGripObj);
+        }
         hasExecuted = false;
         grappleUI.SetActive(true);
         int counter = 0;
