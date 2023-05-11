@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadLevelTwo : MonoBehaviour
 {
     public SceneFader fader;
-    public String nextScene = "Level02";
+    public String nextScene = "Level2";
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
