@@ -7,12 +7,12 @@ public class LightFlicker : MonoBehaviour
     
     [Header("Light parameters")]
     // Intensity range for flickering
-    public float minIntensity = 0.2f;
-    public float maxIntensity = 1.5f;
+    public float minIntensity = 3f;
+    public float maxIntensity = 6f;
 
     // Flicker frequency
-    public float flickerFrequency = 1.1f;
-    public float intsensity;
+    public float flickerFrequency = 1.0f;
+    //public float intsensity;
     
     [Header("Turn Off")]
     public bool turnsOff;
@@ -42,7 +42,7 @@ public class LightFlicker : MonoBehaviour
         
         // Set the intensity of the light
         flickeringLight.intensity = flickerIntensity;
-        intsensity = flickerIntensity;
+        //intsensity = flickerIntensity;
 
         float d = (transform.position - player.position).magnitude;
         if (d < distance && turnsOff)

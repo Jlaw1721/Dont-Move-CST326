@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8585993267674670472}
   - component: {fileID: 7756509651382323395}
   - component: {fileID: 1109803080535451995}
+  - component: {fileID: 1547591021832393578}
+  - component: {fileID: 1368597135898760931}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -44,11 +46,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9528302, g: 0.9001129, b: 0.7775454, a: 1}
-  m_Intensity: 2
-  m_Range: 12
-  m_SpotAngle: 143.7
-  m_InnerSpotAngle: 21.80208
+  m_Color: {r: 0.9339623, g: 0.8414604, b: 0.6123621, a: 1}
+  m_Intensity: 10
+  m_Range: 15
+  m_SpotAngle: 167.59448
+  m_InnerSpotAngle: 19.678337
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -110,9 +112,48 @@ MonoBehaviour:
   minIntensity: 2
   maxIntensity: 4
   flickerFrequency: 1
-  intsensity: 0
   turnsOff: 0
   distance: 0
+--- !u!114 &1547591021832393578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622070208135596496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!114 &1368597135898760931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622070208135596496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minOnTime: 0.5
+  maxOnTime: 2
+  minOffTime: 0.1
+  maxOffTime: 0.5
+  distance: 12
 --- !u!1 &2694506234260287698
 GameObject:
   m_ObjectHideFlags: 0
