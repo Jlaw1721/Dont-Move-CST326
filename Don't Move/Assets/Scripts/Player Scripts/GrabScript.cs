@@ -9,8 +9,9 @@ public class GrabScript : MonoBehaviour
 {
    [Header("Grab Setup Variables")]
    public Transform grabPoint;
-   private GameObject inGripObj;
+   [HideInInspector] public GameObject inGripObj;
    private Hashtable throwSettings;
+   public GameObject playerPhysicsObject;
 
    [Header("Parameters")] 
    public float grabRange = 5.0f;
@@ -69,17 +70,6 @@ public class GrabScript : MonoBehaviour
       }
    }
 
-   private void OnCollisionEnter(Collision collision)
-   {
-      if (collision.gameObject.CompareTag("Grab Object"))
-      {
-         if (inGripObj != null)
-         {
-            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
-         }
-      }
-   }
-   
    public void CheckObject()
    {
       if (inGripObj != null)
@@ -145,7 +135,7 @@ public class GrabScript : MonoBehaviour
       inGripTutorials.gameObject.SetActive(true);
       grabTutorial.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
-      rb.constraints = RigidbodyConstraints.FreezeRotation;
+      //rb.constraints = RigidbodyConstraints.FreezeRotation;
       rb.useGravity = false;
       rb.drag = 10;
       rb.transform.parent = grabPoint;
@@ -156,10 +146,11 @@ public class GrabScript : MonoBehaviour
    {
       inGripTutorials.gameObject.SetActive(false);
       Rigidbody rb = grabbed.GetComponent<Rigidbody>();
-      inGripObj = null;
       rb.transform.parent = null;
+      Physics.IgnoreCollision(inGripObj.GetComponent<Collider>(), playerPhysicsObject.GetComponent<Collider>(), false);
+      inGripObj = null;
       rb.useGravity = true;
-      rb.constraints = RigidbodyConstraints.None;
+      //rb.constraints = RigidbodyConstraints.None;
       rb.drag = 1;
    }
       

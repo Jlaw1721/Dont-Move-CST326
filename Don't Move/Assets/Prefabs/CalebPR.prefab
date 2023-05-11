@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8424241434897470341}
   - component: {fileID: 3504196751093705660}
   - component: {fileID: 4541994288547309346}
+  - component: {fileID: 1903980428392440526}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -107,6 +108,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1903980428392440526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974271717965444725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39adc7d8433914a7887d64c0e8f8e509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraObject: {fileID: 6636362772240158553}
 --- !u!1 &1688481204935766191
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +184,7 @@ Transform:
   - {fileID: 6124871731136231433}
   - {fileID: 5348696707395128996}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2971464422125143896
 GameObject:
@@ -413,6 +427,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 0
   customGravity: 35
   _rb: {fileID: 0}
   soundSource: {fileID: 2038797648645766548}
@@ -655,9 +672,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 5754892776634243735}
+  inGripObj: {fileID: 0}
   grabRange: 5
   grabSpeed: 100
   throwPower: 10
+  grabTutorial: {fileID: 0}
+  centerDot: {fileID: 0}
+  inGripTutorials: {fileID: 0}
 --- !u!124 &8005720354279843956
 Behaviour:
   m_ObjectHideFlags: 0
