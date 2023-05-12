@@ -4,10 +4,12 @@ public class GameOver : MonoBehaviour
 {
     public SceneFader sceneFader;
     public GameObject gameOverUI;
+    public GameObject victoryUI;
     public string menuSceneName = "MainMenu";
     private static GameOver _instance;
     public static GameOver Instance => _instance;
     public AudioSource gameOverSound;
+    public AudioSource victorySound;
 
     private void Awake()
     {
@@ -28,6 +30,17 @@ public class GameOver : MonoBehaviour
         gameOverSound.Play();
     }
 
+    public void Victory()
+    {
+        gameOverUI.SetActive(true);
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
+        Time.timeScale = 0f;
+        victorySound.Play();
+    }
+    
     public void RetryLevel()
     {
         gameOverUI.SetActive(false);
