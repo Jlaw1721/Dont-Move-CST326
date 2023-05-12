@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8305931359135095777}
   - component: {fileID: 4266108254040945595}
-  - component: {fileID: 4845176092390970274}
+  - component: {fileID: 903521948485150759}
+  - component: {fileID: 8310717181568989514}
+  - component: {fileID: 8848912833925376273}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4359256953901233913}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.005, y: -0.768, z: -0.006}
+  m_LocalPosition: {x: 0.005, y: -1.1, z: -0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,11 +46,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9433962, g: 0.81856763, b: 0.6007476, a: 1}
-  m_Intensity: 6
+  m_Color: {r: 0.9339623, g: 0.8414604, b: 0.6123621, a: 1}
+  m_Intensity: 10
   m_Range: 15
-  m_SpotAngle: 136.5
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 176.40149
+  m_InnerSpotAngle: 3.5329285
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -95,7 +97,47 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &4845176092390970274
+--- !u!114 &903521948485150759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359256953901233913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!114 &8310717181568989514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359256953901233913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minOnTime: 0.25
+  maxOnTime: 1
+  minOffTime: 0.1
+  maxOffTime: 0.5
+  distance: 12
+--- !u!114 &8848912833925376273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,10 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minIntensity: 3
   maxIntensity: 6
-  flickerFrequency: 1.1
-  intsensity: 0
-  turnsOff: 0
-  distance: 12
+  flickerFrequency: 1
+  turnsOff: 1
+  distance: 6
 --- !u!1 &8061035167517466400
 GameObject:
   m_ObjectHideFlags: 0

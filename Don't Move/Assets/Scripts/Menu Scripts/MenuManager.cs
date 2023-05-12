@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 
     public string levelToLoad = "Level01";
     public GameObject settingsUI;
+    public GameObject creditsUI;
     public SceneFader sceneFader;
 
     private void Update()
@@ -13,6 +14,10 @@ public class MenuManager : MonoBehaviour
         if (settingsUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             SettingsToggle();
+        }
+        if (creditsUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            CreditsToggle();
         }
     }
 
@@ -24,6 +29,12 @@ public class MenuManager : MonoBehaviour
     public void SettingsToggle()
     {
         settingsUI.SetActive(!settingsUI.activeSelf);
+        GamePreferenceManager.Instance.SavePrefs();
+    }
+    
+    public void CreditsToggle()
+    {
+        creditsUI.SetActive(!creditsUI.activeSelf);
         GamePreferenceManager.Instance.SavePrefs();
     }
 

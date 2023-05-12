@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6896676264378375585}
   - component: {fileID: 4219501766513426291}
-  - component: {fileID: 7264561663200423270}
+  - component: {fileID: 2155902473724486838}
+  - component: {fileID: 33585850}
+  - component: {fileID: 33585855}
+  - component: {fileID: 33585854}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -47,8 +50,8 @@ Light:
   m_Color: {r: 0.9339623, g: 0.8414604, b: 0.6123621, a: 1}
   m_Intensity: 2
   m_Range: 15
-  m_SpotAngle: 129
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 169.51607
+  m_InnerSpotAngle: 61.23771
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -84,7 +87,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -95,7 +98,70 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &7264561663200423270
+--- !u!114 &2155902473724486838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478571913081436888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!114 &33585850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478571913081436888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!114 &33585855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2478571913081436888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a825ea610ca6ff144ad2d05e8220418f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minOnTime: 0.25
+  maxOnTime: 1
+  minOffTime: 0.1
+  maxOffTime: 0.5
+  distance: 10
+--- !u!114 &33585854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,10 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ebfb6e82558024a84854ce34b26d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minIntensity: 2
-  maxIntensity: 4
-  flickerFrequency: 1
-  intsensity: 0
+  minIntensity: 3
+  maxIntensity: 6
+  flickerFrequency: 1.1
   turnsOff: 0
   distance: 0
 --- !u!1 &6586350619780554621

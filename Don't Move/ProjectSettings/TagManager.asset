@@ -8,6 +8,8 @@ TagManager:
   - Floor
   - Grab Object
   - Roof
+  - Monster
+  - static_door
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Interactables
   - 
   - 
   - 
