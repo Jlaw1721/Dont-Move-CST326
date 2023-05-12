@@ -10,6 +10,7 @@ public class LoadLevelTwo : MonoBehaviour
     public String nextScene = "Level2";
     public Boolean isLastLevel = false;
     public GameOver endScript;
+    public GameObject manager;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hit");
@@ -23,7 +24,7 @@ public class LoadLevelTwo : MonoBehaviour
     {
         if (isLastLevel)
         {
-            endScript.Victory();
+           manager.GetComponent<GameOver>().Victory();
         }
         else
         {
