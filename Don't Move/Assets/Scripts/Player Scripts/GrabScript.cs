@@ -98,7 +98,7 @@ public class GrabScript : MonoBehaviour
          Vector3 dir = grabPoint.position - inGripObj.transform.position;
          if (inGripObj.transform.position != grabPoint.position)
          {
-            inGripObj.GetComponent<Rigidbody>().AddForce(dir * 1000 * Time.deltaTime, ForceMode.Force);
+            inGripObj.GetComponent<Rigidbody>().AddForce(dir * 1500 * Time.deltaTime, ForceMode.Force);
          }
       }
    }
