@@ -27,6 +27,7 @@ public class GrabScript : MonoBehaviour
       throwSettings = new Hashtable();
       throwSettings.Add(1f, 15f);
       throwSettings.Add(1.5f, 30f);
+      throwSettings.Add(50f, 30f);
       throwSettings.Add(0.05f, 1f);
       throwSettings.Add(0.15f, 2f);
    }
