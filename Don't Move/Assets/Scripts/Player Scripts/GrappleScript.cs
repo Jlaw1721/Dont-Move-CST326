@@ -37,10 +37,11 @@ public class GrappleScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Monster") && !_monsterMovement.isStunned)
+        if (other.gameObject.CompareTag("Monster"))
         {
             LockPositions();
             StartCoroutine(Grapple());
+            
         }
     }
 
@@ -76,7 +77,6 @@ public class GrappleScript : MonoBehaviour
 
     private IEnumerator Grapple()
     {
-        
         hasExecuted = false;
         grappleUI.SetActive(true);
         int counter = 0;
