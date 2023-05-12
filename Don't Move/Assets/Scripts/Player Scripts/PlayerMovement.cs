@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource soundSource;
     public AudioClip footstepSound;
     public GameObject cross;
+    public GameObject crossUI;
     private Animator crossAnimator;
     public MonsterMovement monsterMovement;
     
@@ -82,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
             _crossReady = false;
             monsterMovement.TriggerStun(5f);
             crossAnimator.Play("Cross");
+            crossUI.SetActive(false);
         }
         
         _rb.isKinematic = false;
