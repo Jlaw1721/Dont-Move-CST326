@@ -32,7 +32,7 @@ public class GameOver : MonoBehaviour
 
     public void Victory()
     {
-        gameOverUI.SetActive(true);
+        victoryUI.SetActive(true);
         
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
