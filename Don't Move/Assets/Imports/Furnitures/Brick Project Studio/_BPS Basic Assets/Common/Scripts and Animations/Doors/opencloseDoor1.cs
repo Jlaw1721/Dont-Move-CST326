@@ -11,7 +11,6 @@ namespace SojaExiles
 		public Animator openandclose1;
 		public bool open;
 		public Transform Player;
-		public GameOver triggerScript;
 
 		void Start()
 		{
@@ -31,7 +30,6 @@ namespace SojaExiles
 							if (Input.GetMouseButtonDown(0))
 							{
 								StartCoroutine(opening());
-								triggerScript.Victory();
 							}
 						}
 						else
